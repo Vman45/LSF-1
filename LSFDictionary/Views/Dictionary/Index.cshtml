@@ -1,0 +1,44 @@
+﻿@model List<LSFDictionary.Models.Dictionary>
+@{
+    ViewBag.Title = "Home Page";
+}
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+
+<header class="intro-header intro-header-img">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>LSFSchool</h1>
+                    <hr class="small">
+                    <span class="subheading">Dictionnaire LSF</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="jumbotron">
+    <center>
+        @using (Html.BeginForm("Index", "Dictionary", FormMethod.Post))
+        {
+        <div class="form-group searchWrapper">
+            <div class="row">
+                <label class="sr-only" for="labelMotSaisi">Mot à saisir</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                    @Html.TextBox("wts", null, new { id = "WordDictionary", @class = "form-control inputDictionaryIndex", placeholder = "Entrez un mot à signer !" })
+                    <span class="input-group-btn"><input type="submit" value="Launch" class="btn btn-success launchButton" /></span>
+                </div>
+            </div>
+        </div>
+        }
+    </center>
+    <hr />
+    <center class="videoDiv">
+        <h3 class="labelWordDictionary">@Model.FirstOrDefault().Key</h3>
+        <video width="60%" class="videoCenter" controls>
+            <source src="@Model.FirstOrDefault().Value" type="video/mp4">
+        </video>
+    </center>
+</div>

@@ -1,0 +1,242 @@
+﻿/* Layout */
+    /* Nav */
+    .DropDownNav {        
+        background-color: transparent!important;
+        border: none !important;
+        margin-top: 4px;
+        font-family: SkModernB!important;
+    }
+
+    .DropDownNav:hover {        
+        background: transparent;
+        border: none !important;
+        color: #A5A5A5;
+        margin-top: 4px;
+    }
+
+    .DropDownNav:active {        
+        background-color: transparent!important;
+        border: none !important;
+        color: #A5A5A5;
+        border: none;
+        margin-top: 4px;
+    }
+
+    .DropDownNav::after {
+        background: transparent!important;
+        border: none !important;
+        color: #A5A5A5;
+        margin-top: 4px;
+    }
+
+    .dropDownMenu {
+        background-color: rgba(255, 255, 255, .15);
+    }
+
+    .dropDownMenu li a:hover {
+        background-color: #337ab7;
+    }
+
+    .dropDownContact {
+        font-family: SkModernB!important;
+        font-size: 14px!important;
+        font-weight: 800!important;
+        letter-spacing: 1px!important;
+    }
+
+    .intro-header-img {
+        background-image: url(images/home-bg.jpg)!important;
+        background-position: center;
+        background-repeat: repeat-x;
+    }
+
+        /* MediaQueries for DropDown Nav & Menu */
+
+        @media screen and (max-width: 782px) {
+            .DropDownNav {
+                color: #777!important;
+            }
+
+            .DropDownNav:hover {
+                color: #333333;
+            }
+
+            .DropDownNav:active {
+                color: #333333;
+            }
+
+            .DropDownNav::after {
+                color: #333333!important;
+            }
+        
+            .dropDownContact {
+                margin-left: 10px;
+            }
+        }
+
+        @media only screen and (min-width: 1170px) {
+            .navbar-custom.is-fixed .DropDownNav {
+                color: #404040!important;
+            }
+
+            .navbar-custom.is-fixed .DropDownNav:hover {
+                color: #0A89A4!important;
+            }
+            .navbar-custom.is-fixed .dropDownMenu {
+                background-color: white!important;
+            }
+            
+            .navbar-custom.is-fixed .dropDownMenu li a:hover {
+                color: white!important;
+            }
+        }
+
+        /* End MediaQueries for DropDown Nav & Menu */
+
+    /* End Nav */
+
+    .allImgIndex {
+        margin-bottom: 35px;
+    }
+
+    a.leftImg {
+        background: url(images/imgDctionnaire.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        border-radius: 50%;
+        display: block;
+        width: 350px;
+        height: 350px;
+        text-indent: -9999px; /* hides the link text */
+        border: 4px solid #999;
+        color: black!important;
+    }
+
+    a.midImg {
+        background: url(images/imgElearning.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 50%;
+        display: block;
+        width: 350px;
+        height: 350px;
+        text-indent: -9999px; /* hides the link text */
+        border: 4px solid #999;
+        color: white!important;
+    }
+
+    a.rightImg {
+        background: url(images/imgJeux.jpg);
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        border-radius: 50%;
+        display: block;
+        width: 350px;
+        height: 350px;
+        text-indent: -9999px; /* hides the link text */
+        border: 4px solid #999;
+        color: white!important;
+    }
+
+    .paraImg {
+        color: #555;
+        font-family: SkModernB;
+        margin-top: 15px;
+    }
+
+    .introIndexPara {
+        color: #555;
+        font-family: SkModernB;
+        margin-top: 35px;
+        font-size: 1.5em;
+    }
+/* End Layout */
+
+/* Dictionary Index */
+
+    .searchWrapper {
+        width: 60%!important;
+        min-width: 190px;
+    }
+
+    .inputDictionaryIndex {
+        height: 42px;
+        font-family: SkModernB;
+    }
+    .launchButton {
+        padding: 6px 12px!important;
+        height: 42px;
+    }
+
+    .videoCenter {
+        min-width: 300px;
+    }
+
+    .labelWordDictionary {
+        font-family: SkModernB;
+    }
+/* End Dictionary Index */
+
+/* Dictionary Category */
+
+    .CategoryWrapper h3 {
+        font-family: SkModernB;
+    }
+
+    .circle {
+	    border-radius: 50%;
+	    margin: 15px;
+	    font-size: 3em;
+        color: #337ab7;
+        padding: 25px;
+        background-color: white;
+        border: 1px solid white;
+	}
+
+    .circle:hover {
+	    border-radius: 50%;
+	    margin: 15px;
+	    font-size: 3em;
+        color: #03192B;
+        padding: 25px;
+        background-color: white;
+        border: 1px solid white;
+	}
+/* End Dictionary Category */
+
+/* Dictionary ListWords */
+
+    .listedWordsTab {
+        margin-left: 10%;
+        margin-right: 10%;
+        background-color: white;
+        border-radius: 10px;
+        border: 2px solid #337AB7;
+    }
+
+    .listedWordsTab thead {
+        background-color: #337AB7;
+        color: white;
+        font-family: SkModernB;
+    }
+
+    .alphaDropDown {
+        color: white;
+        font-family: SkModernB;
+    }
+
+    .alphaDropDown:hover {
+        color: white;
+        font-family: SkModernB;
+    }
+
+/* End Dictionary ListWords */
+
+/* FONT */
+
+    @font-face {
+        font-family: SkModernB;
+        src: url("../fonts/Sk-Modernist-Bold.otf");
+    }
+
+/* END FONT */
