@@ -8,3 +8,10 @@ LSFDictionary/obj/Debug/LSFDictionary.dll
 *.dll
 *.pdb
 *.cache
+*.config
+.vs/LSFDictionary/v14/.suo
+*.dll
+LSFDictionary/bin/LSFDictionary.pdb
+*.pdb
+LSFDictionary/obj/Debug/LSFDictionary.csproj.FileListAbsolute.txt
+*.cache

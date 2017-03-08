@@ -63,6 +63,8 @@ namespace LSFDictionary.Controllers
             using (Models.IDico dc = new Models.Dico())
             {
                 List<Models.Dictionary> listeMot = dc.GetAllWords();
+                //Trier par odre alphabetique
+                listeMot.Sort();
                 return View(listeMot);
             }
         }

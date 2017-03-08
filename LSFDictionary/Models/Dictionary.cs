@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 namespace LSFDictionary.Models
 {
     [Table("WordsDictionary")]
-    public class Dictionary
+    public class Dictionary : IComparable<Dictionary>
     {
         public int Id { get; set; }
         [Required]
@@ -21,5 +21,12 @@ namespace LSFDictionary.Models
         public int Niveau { get; set; }
         [Required]
         public string FontAwe { get; set; }
+
+        public int CompareTo(Dictionary other)
+        {
+            if (other == null) return 1;
+            return this.Key.CompareTo(other.Key);
+
+        }
     }
 }
