@@ -1,0 +1,10 @@
+*.config
+.vs/config/applicationhost.config
+.vs/config/applicationhost.config
+.vs/config/applicationhost.config
+LSFDictionary/bin/LSFDictionary.dll
+LSFDictionary/obj/Debug/LSFDictionary.dll
+*.config
+*.dll
+*.pdb
+*.cache
