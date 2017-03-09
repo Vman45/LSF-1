@@ -68,6 +68,17 @@ namespace LSFDictionary.Controllers
                 return View(listeMot);
             }
         }
+
+        public ActionResult ListLetters()
+        {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Letter> listeLetter = dc.GetAllLetters();
+                //Trier par odre alphabetique
+                listeLetter.Sort();
+                return View(listeLetter);
+            }
+        }
         public ActionResult FindWords(string wts)
         {
             using (Models.IDico dc = new Models.Dico())

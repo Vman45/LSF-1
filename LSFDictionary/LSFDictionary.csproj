@@ -314,6 +314,7 @@
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Dictionary\Category.cshtml" />
     <Content Include="Views\Dictionary\FindWords.cshtml" />
+    <Content Include="Views\Dictionary\ListLetters.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
