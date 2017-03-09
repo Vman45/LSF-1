@@ -209,6 +209,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDico.cs" />
     <Compile Include="Models\InitChoixMot.cs" />
+    <Compile Include="Models\Letter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
