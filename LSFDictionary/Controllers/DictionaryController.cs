@@ -68,15 +68,20 @@ namespace LSFDictionary.Controllers
                 return View(listeMot);
             }
         }
+        private static bool IsNotLetter(Models.Dictionary d)
+        {
+            return d.Cate != "Lettre";
+        }
 
         public ActionResult ListLetters()
         {
             using (Models.IDico dc = new Models.Dico())
             {
-                List<Models.Letter> listeLetter = dc.GetAllLetters();
+                List<Models.Dictionary> listeMot = dc.GetAllWords();
                 //Trier par odre alphabetique
-                listeLetter.Sort();
-                return View(listeLetter);
+                listeMot.Sort();
+                listeMot.RemoveAll(IsNotLetter);
+                return View(listeMot);
             }
         }
         public ActionResult FindWords(string wts)

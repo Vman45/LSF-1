@@ -46,9 +46,14 @@ namespace LSFDictionary.Models
             return bdd.Dictionaries.Any(dictionary => string.Compare(dictionary.Key, key, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 
-        public List<Letter> GetAllLetters()
+        public List<Dictionary> GetAllLetters()
         {
-            return bdd.Letters.ToList();
+            return bdd.Dictionaries.ToList();
+        }
+
+        List<Letter> IDico.GetAllLetters()
+        {
+            throw new NotImplementedException();
         }
     }
 }

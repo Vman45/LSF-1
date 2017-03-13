@@ -56,36 +56,37 @@ namespace LSFDictionary.Models
             context.Dictionaries.Add(new Dictionary { Id = 44, Key = "Eau", Value = "../Movies/eau.MOV", Cate = "Boissons", Niveau = 1, FontAwe = "fa-glass" });
             context.Dictionaries.Add(new Dictionary { Id = 45, Key = "Soleil", Value = "../Movies/soleil.MOV", Cate = "Climat", Niveau = 1, FontAwe = "fa-sun-o" });
 
-            context.Letters.Add(new Letter { Id = 1, Key = "A", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 2, Key = "B", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 3, Key = "C", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 4, Key = "D", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 5, Key = "E", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 6, Key = "F", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 7, Key = "G", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 8, Key = "H", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 9, Key = "I", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 10, Key = "J", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 11, Key = "K", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 12, Key = "L", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 13, Key = "M", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 14, Key = "N", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 15, Key = "O", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 16, Key = "P", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 17, Key = "Q", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 18, Key = "R", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 19, Key = "S", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 20, Key = "T", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 21, Key = "U", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 22, Key = "V", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 23, Key = "W", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 24, Key = "X", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 25, Key = "Y", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
-            context.Letters.Add(new Letter { Id = 26, Key = "Z", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10001, Key = "A", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10002, Key = "B", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10003, Key = "C", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10004, Key = "D", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10005, Key = "E", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10006, Key = "F", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10007, Key = "G", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10008, Key = "H", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10009, Key = "I", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10010, Key = "J", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10011, Key = "K", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10012, Key = "L", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10013, Key = "M", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10014, Key = "N", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10015, Key = "O", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10016, Key = "P", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10017, Key = "Q", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10018, Key = "R", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10019, Key = "S", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10020, Key = "T", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10021, Key = "U", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10022, Key = "V", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10023, Key = "W", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10024, Key = "X", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10025, Key = "Y", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+            context.Dictionaries.Add(new Dictionary { Id = 10026, Key = "Z", Value = "../Movies/DSCN1033.MOV", Cate = "Lettre", Niveau = 1, FontAwe = "fa-comment" });
+
             /*context.Letters.Add(new Letter { Id = 27, Key = "-", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
             context.Letters.Add(new Letter { Id = 28, Key = "'", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });
             context.Letters.Add(new Letter { Id = 29, Key = " ", Value = "../Movies/DSCN1033.MOV", FontAwe = "fa-comment" });*/
-           
+
 
             ;
 
