@@ -7,27 +7,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LSFDictionary.Models
 {
-    [Table("WordsDictionary")]
-    public class Dictionary : IComparable<Dictionary>
+    [Table("Jeux")]
+    public class Score : IComparable<Score>
     {
         public int Id { get; set; }
         [Required]
-        public string Key { get; set; }
-        [Required]
-        public string Value { get; set; }
-        [Required]
-        public string Cate { get; set; }
+        public int User { get; set; }
         [Required]
         public int Niveau { get; set; }
         [Required]
-        public string FontAwe { get; set; }
+        public string Cate { get; set; }
         [Required]
-        public int Valide { get; set; }
+        public int Value { get; set; }
 
-        public int CompareTo(Dictionary other)
+        int IComparable<Score>.CompareTo(Score other)
         {
             if (other == null) return 1;
-            return this.Key.CompareTo(other.Key);
+            return this.Id.CompareTo(other.Id);
 
         }
     }

@@ -9,6 +9,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <UseIISExpress>true</UseIISExpress>
     <WebStackScaffolding_DbContextTypeFullName>LSFDictionary.Models.BddContext</WebStackScaffolding_DbContextTypeFullName>
+    <WebStackScaffolding_ControllerDialogWidth>600</WebStackScaffolding_ControllerDialogWidth>
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

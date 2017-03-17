@@ -1,0 +1,42 @@
+﻿@model List<LSFDictionary.Models.Dictionary>
+@{
+    ViewBag.Title = "Jeux";
+   
+}
+<header class="intro-header intro-header-img">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Jeux</h1>
+                    <hr class="small">
+                    <span class="subheading">Dictionnaire LSF</span>
+                    <br />
+                    @{
+                        for (int i = 0; i < Model.Count; i++)
+                        {
+                            <tr>
+                                <td></td>
+                                <td style="text-align: center;">
+                                    @Model[i].Key
+                                    <br />
+                                    <i>"Ici mettre une belle et longue description"</i>
+                                </td>
+                                <td>
+                                    <div class="video-mask">
+                                        <center>
+                                            <video width="400" controls>
+                                                <source src="@Model[i].Value" type="video/mp4">
+                                            </video>
+                                        </center>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+

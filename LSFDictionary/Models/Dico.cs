@@ -55,5 +55,18 @@ namespace LSFDictionary.Models
         {
             throw new NotImplementedException();
         }
+
+
+        // Récupère 1 mots randome
+        public List<Dictionary> GetWord(int niveau, string cate)
+        {
+
+            return bdd.Dictionaries.Where(dico => dico.Niveau == niveau && dico.Cate == cate).OrderBy(dico => Guid.NewGuid()).Take(1).ToList();
+        }
+        // Récupère 3 mots randome
+        public List<Dictionary> GetWordRandom(string cate)
+        {
+            return bdd.Dictionaries.Where(dico => dico.Cate == cate).OrderBy(dico => Guid.NewGuid()).Take(3).ToList();
+        }
     }
 }

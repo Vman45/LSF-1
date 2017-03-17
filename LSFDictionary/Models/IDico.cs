@@ -15,5 +15,11 @@ namespace LSFDictionary.Models
         bool ExistedWord(string key);
         //Letters
         List<Letter> GetAllLetters();
+
+        // Récupère 1 mots randome
+        List<Dictionary> GetWord(int niveau, string cate);
+        // Récupère 3 mots randome
+        List<Dictionary> GetWordRandom(string cate);
+
     }
 }

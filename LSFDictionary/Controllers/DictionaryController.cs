@@ -119,5 +119,40 @@ namespace LSFDictionary.Controllers
                 }
             }
         }
+
+          public ActionResult Jeux()
+         {
+            int Niveau = 1;
+            string cate = "Lettre";
+    //    public ActionResult Jeux(int Niveau, string cate)
+    //    {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
+                List<Models.Dictionary> res = dc.GetWordRandom(cate);
+               // if (Request.HttpMethod == "POST")
+                //{
+                    reponse[0].Valide = 1;
+                    res[0].Valide = 0;
+                    res[1].Valide = 0;
+                    res[2].Valide = 0;
+                    res.Add(reponse[0]);
+
+                    return View(res);
+             //   }
+              //  return View("erreur");
+            }
+        }
+
+        public ActionResult JeuxAjax(int Niveau, string cate)
+        {
+            using (Models.IDico dc = new Models.Dico()) { 
+                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
+                List<Models.Dictionary> choix = dc.GetWordRandom(cate);
+                string res = "ouijyh";
+                return PartialView(res);
+
+            }
+        }
     }
 }
