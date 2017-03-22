@@ -320,6 +320,7 @@
     <Content Include="Views\Dictionary\ListLetters.cshtml" />
     <Content Include="Views\Dictionary\Jeux.cshtml" />
     <Content Include="Views\Dictionary\FindLetters.cshtml" />
+    <Content Include="Views\Dictionary\ajaxJeux.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
