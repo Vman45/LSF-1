@@ -19,6 +19,9 @@ namespace LSFDictionary.Models
         public string Cate { get; set; }
         [Required]
         public int Value { get; set; }
+        [Required]
+        public int Tours { get; set; }
+        
 
         int IComparable<Score>.CompareTo(Score other)
         {
