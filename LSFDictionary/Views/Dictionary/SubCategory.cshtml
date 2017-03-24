@@ -1,0 +1,56 @@
+﻿@model List<LSFDictionary.Models.Dictionary>
+    @{
+        ViewBag.Title = "SubCategory";
+    }
+
+<header class="intro-header intro-header-img">
+    <div class="container body-content">
+        <div class="row">
+             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                 <div class="site-heading">
+                      <h1>LSFSchool</h1>
+                      <hr class="small">
+                      <span class="subheading">Dictionnaire LSF</span>
+                 </div>
+             </div>
+       </div>
+    </div>
+</header>
+<div class="container">
+    <div class="listedWordsTab">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th style="text-align: center;">Catégorie</th>
+                    <th style="text-align: center;">Définition</th>
+                    <th style="text-align: center;">Vidéo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{
+                for (int i = 0; i < Model.Count; i++)
+                {
+                <tr>
+                    <td style="text-align: center;">@Model[i].Cate</td>
+                    <td style="text-align: center;">
+                        @Model[i].Key
+                        <br />
+                        <i>"Ici mettre une belle et longue description"</i>
+                    </td>
+                    <td>
+                        <div class="video-mask">
+                            <center>
+                                <video width="400" controls>
+                                    <source src="@Model[i].Value" type="video/mp4">
+                                </video>
+                            </center>
+                        </div>
+                    </td>
+                </tr>
+                }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    </div>
