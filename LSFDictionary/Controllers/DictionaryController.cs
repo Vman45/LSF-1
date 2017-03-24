@@ -65,6 +65,27 @@ namespace LSFDictionary.Controllers
                 List<Models.Dictionary> listeMot = dc.GetAllWords();
                 //Trier par odre alphabetique
                 listeMot.Sort();
+                listeMot.RemoveAll(IsLetter);
+                return View(listeMot);
+            }
+        }
+        private static bool IsNotLetter(Models.Dictionary d)
+        {
+            return d.Cate != "Lettre";
+        }
+        private static bool IsLetter(Models.Dictionary d)
+        {
+            return d.Cate == "Lettre";
+        }
+
+        public ActionResult ListLetters()
+        {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Dictionary> listeMot = dc.GetAllWords();
+                //Trier par odre alphabetique
+                listeMot.Sort();
+                listeMot.RemoveAll(IsNotLetter);
                 return View(listeMot);
             }
         }
@@ -101,6 +122,95 @@ namespace LSFDictionary.Controllers
                     List<Models.Dictionary> listeMot = dc.GetAllWords();
                     return View(listeMot);
                 }
+            }
+        }
+
+        public ActionResult FindLetters(string wts)
+        {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                if (Request.HttpMethod == "POST")
+                {
+                    List<Models.Dictionary> listeMot = dc.GetAllWords();                    
+                    listeMot.RemoveAll(IsNotLetter);
+                    listeMot.Sort();
+                    List<Models.Dictionary> res = new List<Models.Dictionary>();
+                    Char[] wtsTab = wts.ToCharArray();
+                    string[] stringArray = new string[wtsTab.Length];
+                    for (int i =0; i < wtsTab.Length; i++)
+                    {
+                        stringArray[i] = Char.ToUpper(wtsTab[i]).ToString();
+                        for (int j = 0; j < listeMot.Count; j++)
+                        {   
+                            if(listeMot[j].Key == Char.ToUpper(wtsTab[i]).ToString())
+                            {
+                                res.Add(listeMot[j]);
+                            }
+                        }
+                    }
+                    
+                    return View(res);
+                }
+                else // if request is GET
+                {
+                    List<Models.Dictionary> listeMot = dc.GetAllWords();
+                    listeMot.RemoveAll(IsNotLetter);
+                    listeMot.Sort();
+                    return View(listeMot);
+                }
+            }
+        }
+        public ActionResult Jeux()
+         {
+            int Niveau = 1;
+            string cate = "Lettre";
+    //    public ActionResult Jeux(int Niveau, string cate)
+    //    {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
+                List<Models.Dictionary> res = dc.GetWordRandom(cate);
+               // if (Request.HttpMethod == "POST")
+                //{
+                    reponse[0].Valide = 1;
+                    res[0].Valide = 0;
+                    res[1].Valide = 0;
+                    res[2].Valide = 0;
+                Random rand = new Random();
+                int i;
+                i = rand.Next(0,4);
+                res.Insert(i, reponse[0]);
+
+                    return View(res);
+             //   }
+              //  return View("erreur");
+            }
+        }
+
+        public ActionResult ajaxJeux()
+        {
+            int Niveau = 1;
+            string cate = "Lettre";
+            //    public ActionResult Jeux(int Niveau, string cate)
+            //    {
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
+                List<Models.Dictionary> res = dc.GetWordRandom(cate);
+                // if (Request.HttpMethod == "POST")
+                //{
+                reponse[0].Valide = 1;
+                res[0].Valide = 0;
+                res[1].Valide = 0;
+                res[2].Valide = 0;
+                Random rand = new Random();
+                int i;
+                i = rand.Next(0, 4);
+                res.Insert(i, reponse[0]);
+
+                return PartialView(res);
+                //   }
+                //  return View("erreur");
             }
         }
     }

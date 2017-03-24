@@ -1,0 +1,34 @@
+﻿@model List<LSFDictionary.Models.Dictionary>
+@{
+    ViewBag.Title = "Jeux";
+
+}
+<header class="intro-header intro-header-img">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h2>Jeux</h2>
+                    <br />
+                    <div id="jeuxAjax">
+                        @{
+                            Html.RenderAction("ajaxJeux");
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<SCRIPT language="Javascript">
+    var score = 0;
+    var tour = 0;
+    function rechargeAjax() {
+         @Ajax.ActionLink("Actualiser le résultat", "ajaxJeux", new AjaxOptions
+        {
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "jeuxAjax",
+    })
+    }
+</SCRIPT>
+</header>
+

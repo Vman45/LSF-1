@@ -21,6 +21,8 @@ namespace LSFDictionary.Models
         public int Niveau { get; set; }
         [Required]
         public string FontAwe { get; set; }
+        [Required]
+        public int Valide { get; set; }
 
         public int CompareTo(Dictionary other)
         {
@@ -28,5 +30,23 @@ namespace LSFDictionary.Models
             return this.Key.CompareTo(other.Key);
 
         }
+
+        public override bool Equals(System.Object obj)
+        {
+            // If parameter is null return false.
+            if (obj == null)
+            {
+                return false;
+            }
+                        
+            if ((System.Object)obj == null)
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return (this.Key==(String)obj);
+        }
+
     }
 }

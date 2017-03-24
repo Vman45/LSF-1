@@ -204,11 +204,15 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BddContext.cs" />
+    <Compile Include="Models\Score.cs" />
+    <Compile Include="Models\Jeux.cs" />
     <Compile Include="Models\Dico.cs" />
     <Compile Include="Models\Dictionary.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\IDico.cs" />
     <Compile Include="Models\InitChoixMot.cs" />
+    <Compile Include="Models\IJeux.cs" />
+    <Compile Include="Models\Letter.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -313,6 +317,10 @@
     <Content Include="Views\Shared\_DefaultLayout.cshtml" />
     <Content Include="Views\Dictionary\Category.cshtml" />
     <Content Include="Views\Dictionary\FindWords.cshtml" />
+    <Content Include="Views\Dictionary\ListLetters.cshtml" />
+    <Content Include="Views\Dictionary\Jeux.cshtml" />
+    <Content Include="Views\Dictionary\FindLetters.cshtml" />
+    <Content Include="Views\Dictionary\ajaxJeux.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
