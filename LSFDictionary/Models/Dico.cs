@@ -46,6 +46,7 @@ namespace LSFDictionary.Models
             return bdd.Dictionaries.Any(dictionary => string.Compare(dictionary.Key, key, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
 
+
         public List<Dictionary> GetAllLetters()
         {
             return bdd.Dictionaries.ToList();
@@ -67,6 +68,11 @@ namespace LSFDictionary.Models
         public List<Dictionary> GetWordRandom(string cate)
         {
             return bdd.Dictionaries.Where(dico => dico.Cate == cate).OrderBy(dico => Guid.NewGuid()).Take(3).ToList();
+
+        public List<Dictionary> GetWordsCategory(string cate)
+        {
+            return bdd.Dictionaries.Where(dico => dico.Cate == cate).ToList();
+
         }
     }
 }

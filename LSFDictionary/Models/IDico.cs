@@ -13,6 +13,7 @@ namespace LSFDictionary.Models
         void AddSignedWord(string key, string value);
         void ModifySignedWord(int id, string key, string value);
         bool ExistedWord(string key);
+
         //Letters
         List<Letter> GetAllLetters();
 
@@ -20,6 +21,8 @@ namespace LSFDictionary.Models
         List<Dictionary> GetWord(int niveau, string cate);
         // Récupère 3 mots randome
         List<Dictionary> GetWordRandom(string cate);
+
+        List<Dictionary> GetWordsCategory(string cate);
 
     }
 }
