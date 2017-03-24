@@ -12,5 +12,6 @@ namespace LSFDictionary.Models
         void AddSignedWord(string key, string value);
         void ModifySignedWord(int id, string key, string value);
         bool ExistedWord(string key);
+        List<Dictionary> GetWordsCategory(string cate);
     }
 }

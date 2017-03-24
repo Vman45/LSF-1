@@ -9,6 +9,12 @@ namespace LSFDictionary.Controllers
 {
     public class DictionaryController: Controller
     {
+        public ActionResult Tutoriel()
+        {
+            return View();
+        }
+
+
         public ActionResult Index(string wts)
         {
             using (Models.IDico dc = new Models.Dico())
@@ -58,6 +64,18 @@ namespace LSFDictionary.Controllers
                 return View(listeMot);
             }
         }
+        
+        public ActionResult SubCategory(string cate)
+        {
+            
+            using (Models.IDico dc = new Models.Dico())
+            {
+                List<Models.Dictionary> listeMot = dc.GetWordsCategory(cate);
+
+                return View(listeMot);
+            }
+        }
+
         public ActionResult ListWords()
         {
             using (Models.IDico dc = new Models.Dico())

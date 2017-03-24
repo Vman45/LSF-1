@@ -45,5 +45,10 @@ namespace LSFDictionary.Models
         {
             return bdd.Dictionaries.Any(dictionary => string.Compare(dictionary.Key, key, StringComparison.CurrentCultureIgnoreCase) == 0);
         }
+
+        public List<Dictionary> GetWordsCategory(string cate)
+        {
+            return bdd.Dictionaries.Where(dico => dico.Cate == cate).ToList();
+        }
     }
 }
