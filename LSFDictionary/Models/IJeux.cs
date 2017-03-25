@@ -9,7 +9,7 @@ namespace LSFDictionary.Models
     public interface IJeux : IDisposable
     {
         List<Score> getScores();
-        void AddScore(int niveau, int value, string cate, int tours);
+        void AddScore(int id, int niveau, int value, string cate, int tours);
 
         List<Score> getScore(int id);
 

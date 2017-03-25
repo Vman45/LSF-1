@@ -25,9 +25,10 @@ namespace LSFDictionary.Models
             bdd.Dispose();
         }
 
-        public void AddScore(int niveau, int value, string cate, int tours)
+        public void AddScore(int id, int niveau, int value, string cate, int tours)
         {
-            bdd.Scores.Add(new Score { Niveau = niveau, Value = value, Cate = cate,  });
+
+            bdd.Scores.Add(new Score {Id = id, Niveau = niveau, Value = value, Cate = cate, Tours = tours });
             bdd.SaveChanges();
         }
 

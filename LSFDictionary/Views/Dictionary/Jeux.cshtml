@@ -48,11 +48,11 @@
                                         @{
                                             if (Model[i].Valide == 1)
                                             {
-                                                <a href="javascript:;" onClick="Bonne();">@Model[i].Key</a>
+                                                @Html.ActionLink(@Model[i].Key, "ajaxJeux", "Dictionary", new { scores = 1 , id = 1 }, null)
                                             }
                                             else
                                             {
-                                                <a href="javascript:;" onClick="Mauvaise();">@Model[i].Key</a>
+                                                @Html.ActionLink(@Model[i].Key, "ajaxJeux", "Dictionary", new { scores = 0, id = 1 }, null)
                                             }
                                         }
                                     </td>

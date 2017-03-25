@@ -160,23 +160,21 @@ namespace LSFDictionary.Controllers
                 }
             }
         }
-        public ActionResult Jeux()
-         {
-            int Niveau = 1;
-            string cate = "Lettre";
-    //    public ActionResult Jeux(int Niveau, string cate)
-    //    {
+
+        public ActionResult Jeux(int Niveau, string cate)
+        {
             using (Models.IDico dc = new Models.Dico())
             {
                 using (Models.IJeux sc = new Models.Jeux())
                 {
                     List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
                     List<Models.Dictionary> res = dc.GetWordRandom(cate);
-                    sc.AddScore(Niveau, 0, cate, 1);
-                   // if (Request.HttpMethod == "POST")
-                    //{
+                    List<Models.Score> listscre = sc.getScores();
+                    int id = listscre.Count()+1;
+                    sc.AddScore(id, Niveau, 0, cate, 1);
+                    ViewBag.id = id;
                         reponse[0].Valide = 1;
-                        res[0].Valide = 0;
+                       res[0].Valide = 0;
                         res[1].Valide = 0;
                         res[2].Valide = 0;
                     Random rand = new Random();
@@ -185,8 +183,6 @@ namespace LSFDictionary.Controllers
                     res.Insert(i, reponse[0]);
 
                         return View(res);
-                 //   }
-                  //  return View("erreur");
                 }
             }
         }
@@ -203,13 +199,11 @@ namespace LSFDictionary.Controllers
                     List<Models.Dictionary> reponse = dc.GetWord(monScore[0].Niveau, monScore[0].Cate);
                     List<Models.Dictionary> res = dc.GetWordRandom(monScore[0].Cate);
 
-                    if (Request.HttpMethod == "POST")
-                    {
                         int tour = monScore[0].Tours;
                         int val = monScore[0].Value;
                         if (tour > 9)
                         {
-                            return View(monScore);
+                            afficheResulte(id);
                         }
                         else
                         {
@@ -225,13 +219,20 @@ namespace LSFDictionary.Controllers
                             int i;
                             i = rand.Next(0, 4);
                             res.Insert(i, reponse[0]);
-
-                            return View(res);
                         }
-                    }
-                          return View("erreur");
-                    }
+                    return View(res);
+                }
                 }
             }
+
+        public ActionResult afficheResulte(int id)
+        {
+                using (Models.IJeux sc = new Models.Jeux())
+                {
+                    List<Models.Score> monScore = sc.getScore(id);
+                    return View(monScore);
+                }
         }
+
     }
+}
