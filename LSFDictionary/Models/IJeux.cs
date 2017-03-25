@@ -8,8 +8,14 @@ namespace LSFDictionary.Models
 {
     public interface IJeux : IDisposable
     {
-        List<Score> GetScore();
-        void AddScore(int niveau, int Value, string cate);
+        List<Score> getScores();
+        void AddScore(int id, int niveau, int value, string cate, int tours);
+
+        List<Score> getScore(int id);
+
+        void setTour(int tours, int id);
+
+        void setValue(int value, int id);
 
     }
 }

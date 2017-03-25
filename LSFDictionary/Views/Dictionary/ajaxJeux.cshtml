@@ -2,78 +2,75 @@
 @{
     ViewBag.Title = "ajaxJeux";
 }
-
-<div>
-    @{
-        for (int i = 0; i < Model.Count; i++)
-        {
-            <tr>
-                <td></td>
-                <td>
-                    @{
-                        if (Model[i].Valide == 1)
-                        {
-                            <div class="video-mask">
-                                <center>
-                                    <video width="600" controls>
-                                        <source src="@Model[i].Value" type="video/mp4">
-                                    </video>
-                                </center>
-                            </div>
-                        }
-                    }
-                </td>
-            </tr>
-                        }
-    }
-    <br />
-    <td>Trouve le mots qui correspond à la vidéo</td>
-    <br />
-    <br />
-    <tr>
-        @{
-            for (int i = 0; i < Model.Count; i++)
-            {
-
-                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+<header class="intro-header intro-header-img">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h2>Jeux</h2>
+                    <br />
+                    <div>
+                        @{
+                            for (int i = 0; i < Model.Count; i++)
+                            {
+                                <tr>
+                                    <td></td>
                                     <td>
                                         @{
                                             if (Model[i].Valide == 1)
                                             {
-                                                <a href="javascript:;" onClick="Bonne();">@Model[i].Key</a>
+                                                <div class="video-mask">
+                                                    <center>
+                                                        <video width="600" controls>
+                                                            <source src="@Model[i].Value" type="video/mp4">
+                                                        </video>
+                                                    </center>
+                                                </div>
+                                            }
+                                        }
+                                    </td>
+                                </tr>
+                                            }
+                        }
+                        <br />
+                        <td>Trouve le mots qui correspond à la vidéo</td>
+                        <br />
+                        <br />
+                        <tr>
+                            @{
+                                for (int i = 0; i < Model.Count; i++)
+                                {
+
+                                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                    <td>
+                                        @{
+                                            if (Model[i].Valide == 1)
+                                            {
+                                                @Html.ActionLink(@Model[i].Key, "ajaxJeux", "Dictionary", new { scores = 1, id = 1 }, null)
                                             }
                                             else
                                             {
-                                                <a href="javascript:;" onClick="Mauvaise();">@Model[i].Key</a>
+                                                @Html.ActionLink(@Model[i].Key, "ajaxJeux", "Dictionary", new { scores = 0, id = 1 }, null)
                                             }
                                         }
                                     </td>
                                             }
-        }
-        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-    </tr>
-</div>
-<SCRIPT language="Javascript">
-    var reponse = 1;
+                            }
+                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                        </tr>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <SCRIPT language="Javascript">
+        var reponse = 1;
     function Mauvaise() {
     alert('Ba dit donc bonhomme t\'as pas révisé ?');
     reponse = 0;
     }
-    function Bonne() {
-        if (reponse == 1) {
-            score++;
-        }
-        tour++;
-        if (tour < 11) {
-            rechargeAjax();
-        } else {
-            alert(score);
-        }
-    }
+    </SCRIPT>
+</header>
 
-function getreponse() {
-   return reponse;
-}
-</SCRIPT>
 
 

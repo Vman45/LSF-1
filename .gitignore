@@ -15,3 +15,6 @@ LSFDictionary/bin/LSFDictionary.pdb
 *.pdb
 LSFDictionary/obj/Debug/LSFDictionary.csproj.FileListAbsolute.txt
 *.cache
+.vs/LSFDictionary/v14/.suo
+*.suo
+LSFDictionary/bin/LSFDictionary.dll

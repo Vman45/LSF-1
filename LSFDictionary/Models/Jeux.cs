@@ -15,7 +15,7 @@ namespace LSFDictionary.Models
             bdd = new BddContext();
         }
 
-        public List<Score> GetScore()
+        public List<Score> getScores()
         {
             return bdd.Scores.ToList();
         }
@@ -25,10 +25,35 @@ namespace LSFDictionary.Models
             bdd.Dispose();
         }
 
-        public void AddScore(int niveau, int value, string cate)
+        public void AddScore(int id, int niveau, int value, string cate, int tours)
         {
-            bdd.Scores.Add(new Score { Niveau = niveau, Value = value, Cate = cate });
+
+            bdd.Scores.Add(new Score {Id = id, Niveau = niveau, Value = value, Cate = cate, Tours = tours });
             bdd.SaveChanges();
+        }
+
+        public List<Score> getScore(int id)
+        {
+            return bdd.Scores.Where(jeux => jeux.Id == id).ToList();
+        }
+        public void setTour(int tours, int id)
+        {
+            Score finde = bdd.Scores.FirstOrDefault(jeux => jeux.Id == id);
+            if (finde != null)
+            {
+                finde.Tours = tours;
+                bdd.SaveChanges();
+            }
+        }
+
+        public void setValue(int value, int id)
+        {
+            Score finde = bdd.Scores.FirstOrDefault(jeux => jeux.Id == id);
+            if (finde != null)
+            {
+                finde.Value = value;
+                bdd.SaveChanges();
+            }
         }
     }
 }

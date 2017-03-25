@@ -178,58 +178,79 @@ namespace LSFDictionary.Controllers
                 }
             }
         }
-        public ActionResult Jeux()
-         {
-            int Niveau = 1;
-            string cate = "Lettre";
-    //    public ActionResult Jeux(int Niveau, string cate)
-    //    {
-            using (Models.IDico dc = new Models.Dico())
-            {
-                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
-                List<Models.Dictionary> res = dc.GetWordRandom(cate);
-               // if (Request.HttpMethod == "POST")
-                //{
-                    reponse[0].Valide = 1;
-                    res[0].Valide = 0;
-                    res[1].Valide = 0;
-                    res[2].Valide = 0;
-                Random rand = new Random();
-                int i;
-                i = rand.Next(0,4);
-                res.Insert(i, reponse[0]);
 
-                    return View(res);
-             //   }
-              //  return View("erreur");
-            }
-        }
-
-        public ActionResult ajaxJeux()
+        public ActionResult Jeux(int Niveau, string cate)
         {
-            int Niveau = 1;
-            string cate = "Lettre";
-            //    public ActionResult Jeux(int Niveau, string cate)
-            //    {
             using (Models.IDico dc = new Models.Dico())
             {
-                List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
-                List<Models.Dictionary> res = dc.GetWordRandom(cate);
-                // if (Request.HttpMethod == "POST")
-                //{
-                reponse[0].Valide = 1;
-                res[0].Valide = 0;
-                res[1].Valide = 0;
-                res[2].Valide = 0;
-                Random rand = new Random();
-                int i;
-                i = rand.Next(0, 4);
-                res.Insert(i, reponse[0]);
+                using (Models.IJeux sc = new Models.Jeux())
+                {
+                    List<Models.Dictionary> reponse = dc.GetWord(Niveau, cate);
+                    List<Models.Dictionary> res = dc.GetWordRandom(cate);
+                    List<Models.Score> listscre = sc.getScores();
+                    int id = listscre.Count()+1;
+                    sc.AddScore(id, Niveau, 0, cate, 1);
+                    ViewBag.id = id;
+                        reponse[0].Valide = 1;
+                       res[0].Valide = 0;
+                        res[1].Valide = 0;
+                        res[2].Valide = 0;
+                    Random rand = new Random();
+                    int i;
+                    i = rand.Next(0,4);
+                    res.Insert(i, reponse[0]);
 
-                return PartialView(res);
-                //   }
-                //  return View("erreur");
+                        return View(res);
+                }
             }
         }
+
+
+        public ActionResult ajaxJeux(int scores, int id)
+        {
+
+            using (Models.IDico dc = new Models.Dico())
+            {
+                using (Models.IJeux sc = new Models.Jeux())
+                {
+                    List<Models.Score> monScore = sc.getScore(id);
+                    List<Models.Dictionary> reponse = dc.GetWord(monScore[0].Niveau, monScore[0].Cate);
+                    List<Models.Dictionary> res = dc.GetWordRandom(monScore[0].Cate);
+
+                        int tour = monScore[0].Tours;
+                        int val = monScore[0].Value;
+                        if (tour > 9)
+                        {
+                            afficheResulte(id);
+                        }
+                        else
+                        {
+
+                            sc.setTour(++tour, id);
+                            val = val + scores;
+                            sc.setValue(val, id);
+                            reponse[0].Valide = 1;
+                            res[0].Valide = 0;
+                            res[1].Valide = 0;
+                            res[2].Valide = 0;
+                            Random rand = new Random();
+                            int i;
+                            i = rand.Next(0, 4);
+                            res.Insert(i, reponse[0]);
+                        }
+                    return View(res);
+                }
+                }
+            }
+
+        public ActionResult afficheResulte(int id)
+        {
+                using (Models.IJeux sc = new Models.Jeux())
+                {
+                    List<Models.Score> monScore = sc.getScore(id);
+                    return View(monScore);
+                }
+        }
+
     }
 }
