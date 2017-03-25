@@ -68,6 +68,7 @@ namespace LSFDictionary.Models
         public List<Dictionary> GetWordRandom(string cate)
         {
             return bdd.Dictionaries.Where(dico => dico.Cate == cate).OrderBy(dico => Guid.NewGuid()).Take(3).ToList();
+        }
 
         public List<Dictionary> GetWordsCategory(string cate)
         {
